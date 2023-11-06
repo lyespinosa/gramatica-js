@@ -18,12 +18,11 @@ const CodeValidator = () => {
       message: "La definición de la función no es válida.",
     },
     {
-      regex: /^(|Iterate[a-z]([a-zA-Z][a-z])?in range\d+\.\d+\.\d+\.\d+\{[^}]\})$/,
+      regex: /^(Iterate [a-zA-Z] in range \d+\.\.\.\d+\{[^}]+\})$/,
       message: "El bucle no es válido.",
     },
     {
-      regex:
-        /^(|If\s+[a-zA-Z]+("."|\d+(\d))?(==|>|<|>=|<=)then\{[^}]\})$/,
+      regex:/^(|If\s+[a-zA-Z]+("."|\d+(\d))?(==|>|<|>=|<=)then\{[^}]\})$/,
       message: "El condicional no es válido.",
     },
     {
