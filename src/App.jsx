@@ -10,7 +10,7 @@ const CodeValidator = () => {
 
   const rules = [
     {
-      regex: /^(|(Int|String)\s+[a-zA-Z]+\s+=\s+(\d+|"[^"]*"))$/,
+      regex: /^(|(Int|String)\s+[a-zA-Z]+\s+=\s+(\d+|"[^"]*"))$/, //terminado
       message: "La asignación no es válida.",
     },
     {
@@ -23,7 +23,7 @@ const CodeValidator = () => {
     },
     {
       regex:
-        /^(|If\s+[a-zA-Z]+("."|\d+(\d))?(==|>|<|>=|<=)then\{[^}]\})$/,
+        /^(|If\(([a-zA-Z]+|\d+)(<|>|<=|>=|==)([a-zA-Z]+|\d+)\)then\{\s*Contenido\s*\})$/, //terminado
       message: "El condicional no es válido.",
     },
     {
