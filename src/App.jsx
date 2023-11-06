@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import React, { useState } from "react";
+import CodeMirror from "@uiw/react-codemirror";
+import { vscodeDark } from "@uiw/codemirror-theme-vscode";
 function App() {
-  const [count, setCount] = useState(0)
+  const [code, setCode] = useState('');
+  const [output, setOutput] = useState('');
 
+  const handleClearing = () => {
+    setOutput('');
+  }
+
+  const submitCode = () => {
+    console.log(code)
+
+    setOutput("Error en tal parte de código")
+  }
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="content">
+      <div className="heading">
+        <h3 className="errorsLog" >Reporte de errores: <span>{output}</span> </h3>
+        <button className="clearButton" onClick={handleClearing}>Clear errors</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <CodeMirror
+        value={code}
+        height="400px"
 
-export default App
+        theme={vscodeDark}
+        onChange={(editor, change) => {
+          setCode(editor);
+          console.log(code)
+        }}
+      />
+      <button className="buttonSubmit" onClick={submitCode}>Enviar</button>
+    </div>
+
+  );
+}
+export default App;
