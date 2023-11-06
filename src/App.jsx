@@ -10,27 +10,28 @@ const CodeValidator = () => {
 
   const rules = [
     {
-      regex: /^(|(Int|String)\s+[a-zA-Z]+\s+=\s+(\d+|"[^"]*"))$/,
+      regex: /^(|(Int|String)\s+[a-zA-Z]+\s+=\s+(\d+|"[^"]*"))$/, //terminado
       message: "La asignación no es válida.",
     },
     {
-      regex: /^(|Task\s+[a-zA-Z]+\s+(Int|String)\s+[a-zA-Z]+{[^}]\})$/,
+      regex: /^(|Task\s+[a-zA*--Z]+\s+(Int|String)\s+[a-zA-Z]+{[^}]\})$/,
       message: "La definición de la función no es válida.",
     },
     {
-      regex: /^(Iterate [a-zA-Z] in range \d+\.\.\.\d+\{[^}]+\})$/,
+      regex: /^(|Iterate[a-z]([a-zA-Z][a-z])?in range\d+\.\d+\.\d+\.\d+\{[^}]\})$/,
       message: "El bucle no es válido.",
     },
     {
-      regex:/^(|If\s+[a-zA-Z]+("."|\d+(\d))?(==|>|<|>=|<=)then\{[^}]\})$/,
+      regex:
+        /^(|If\s+[a-zA-Z]+("."|\d+(\d))?(==|>|<|>=|<=)then\{[^}]\})$/,
       message: "El condicional no es válido.",
     },
     {
-      regex: /^(|Principal Task\(\)\{[^}]*\})$/,
+      regex: /^(|Principal\s+Task\(\)\s*\{\s*(contenido|Contenido)\s*\})$/, //terminado
       message: "Funcion main no válida.",
     },
     {
-      regex: /^(|Contenido)$/,
+      regex: /^(|(contenido|Contenido))$/,
       message: "La instrucción de impresión no es válida.",
     },
   ];
