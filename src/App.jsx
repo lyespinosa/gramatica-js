@@ -10,24 +10,24 @@ const CodeValidator = () => {
 
   const rules = [
     {
-      regex: /^(|(Int|String)\s+[a-zA-Z]+\s+=\s+(\d+|"[^"]*"))$/, //terminado
+      regex: /^(|(Int|String)\s+[a-zA-Z]+\s+=\s+(\d+|'[^"]*'))$/, //terminado
       message: "La asignación no es válida.",
     },
     {
-      regex: /^(|Task\s+[a-zA-Z]+\s*\(([^)])\)\s\{\s*([\s\S]?)\s\})$/,
+      regex: /^(|Task\s+[a-zA-Z]+\((Int|String)\s+[a-zA-Z]+\){ConsolePrint\(([a-zA-Z]+|'[^"]*')\+([a-zA-Z]+|'[^"]*')\)})$/,
       message: "La definición de la función no es válida.",
     },
     {
-      regex: /^(|iterate\s+i\s+in\s+range\s+([0-9]+)\s*\.\.\.\s*([0-9]+)\s*\{\s*(contenido|Contenido)\s*\})$/, //terminado
+      regex: /^(|iterate\s+i\s+in\s+range\s+([0-9]+)\s*\.\.\.\s*([0-9]+)\s*\{\s*Contenido\s*\})$/, //terminado
       message: "El bucle no es válido.",
     },
     {
       regex:
-        /^(|If\(([a-zA-Z]+|\d+)(<|>|<=|>=|==)([a-zA-Z]+|\d+)\)then\{\s*(contenido|Contenido)\s*\})$/, //terminado
+        /^(|If\(([a-zA-Z]+|\d+)(<|>|<=|>=|==)([a-zA-Z]+|\d+)\)then\{\s*Contenido\s*\})$/, //terminado
       message: "El condicional no es válido.",
     },
     {
-      regex: /^(|Principal\s+Task\(\)\s*\{\s*(contenido|Contenido)\s*\})$/, //terminado
+      regex: /^(|Principal\s+Task\(\)\s*\{\s*Contenido\s*\})$/, //terminado
       message: "Funcion main no válida.",
     },
     {
