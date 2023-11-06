@@ -23,7 +23,7 @@ const CodeValidator = () => {
     },
     {
       regex:
-        /^(|If\(([a-zA-Z]+|\d+)(<|>|<=|>=|==)([a-zA-Z]+|\d+)\)then\{\s*(contenido|Contenido)\s*\})$/, //terminado
+        /^(|If\s+[a-zA-Z]+("."|\d+(\d))?(==|>|<|>=|<=)then\{[^}]\})$/,
       message: "El condicional no es válido.",
     },
     {
