@@ -14,7 +14,7 @@ const CodeValidator = () => {
       message: "La asignación no es válida.",
     },
     {
-      regex: /^(|Task\s+[a-zA-Z]+\((Int|String)\s+[a-zA-Z]+\){ConsolePrint\(([a-zA-Z]+|'[^"]*')\+([a-zA-Z]+|'[^"]*')\)})$/,
+      regex: /^(|Task\s+[a-zA-Z]+\s+\((Int|String)\s+[a-zA-Z]+\){\s*ConsolePrint\(([a-zA-Z]+|'[^"]*')\+([a-zA-Z]+|'[^"]*')\)\s*})$/, //terminado
       message: "La definición de la función no es válida.",
     },
     {
@@ -27,7 +27,7 @@ const CodeValidator = () => {
       message: "El condicional no es válido.",
     },
     {
-      regex: /^(|Principal\s+Task\(\)\s*\{\s*Contenido\s*\})$/, //terminado
+      regex: /^(|Principal\s+Task\(\)\s*\{ConsolePrint\('[^"]*'\)})$/, //terminado
       message: "Funcion main no válida.",
     },
     {
@@ -63,7 +63,7 @@ const CodeValidator = () => {
       return `Error: Llave de apertura en la línea ${lastUnclosed.line}, columna ${lastUnclosed.char} sin cierre correspondiente`;
     }
 
-    return null; // No hay errores de llaves.
+    return null;
   };
 
   const validateLine = (line, lineNumber) => {
