@@ -14,11 +14,11 @@ const CodeValidator = () => {
       message: "La asignación no es válida.",
     },
     {
-      regex: /^(|Task\s+[a-zA*--Z]+\s+(Int|String)\s+[a-zA-Z]+{[^}]\})$/,
+      regex: /^(|Task\s+[a-zA-Z]+\s*\(([^)])\)\s\{\s*([\s\S]?)\s\})$/,
       message: "La definición de la función no es válida.",
     },
     {
-      regex: /^(|iterate\s+i\s+in\s+range\s+([0-9]+)\s*\.\.\.\s*([0-9]+)\s*\{\s*(contenido|Contenido)\s*\})$/,
+      regex: /^(|iterate\s+i\s+in\s+range\s+([0-9]+)\s*\.\.\.\s*([0-9]+)\s*\{\s*(contenido|Contenido)\s*\})$/, //terminado
       message: "El bucle no es válido.",
     },
     {
