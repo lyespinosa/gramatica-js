@@ -7,9 +7,11 @@
   flex: 1;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   display: block;
   text-align: left;
+  list-style: none;
+  line-height: 24px;
 }
 
 .heading {
