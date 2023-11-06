@@ -1,3 +1,4 @@
+module.exports = `
 // Declaración de variables
 Start_Var_Decl = Var_Type Var_Letter Identifier Equals Declarator
 
@@ -63,3 +64,4 @@ Conditional_Then = "then"
 Start_Main = Principal_Task Param_List Block_Content
 
 Principal_Task = "Principal Task"
+`;
